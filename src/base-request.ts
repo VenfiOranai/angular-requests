@@ -6,7 +6,7 @@ import { RequestMethod } from './request-methods';
 import { ensureObservation, hashObject } from './utils';
 
 @Injectable()
-export abstract class Request<Input, Output> extends Subject<RequestStore<Input, Output>> {
+export abstract class BaseRequest<Input, Output> extends Subject<RequestStore<Input, Output>> {
   private store: Map<string, RequestStore<Input, Output>> = new Map<string, RequestStore<Input, Output>>();
 
   protected readonly staleTimer: number = 30000;
