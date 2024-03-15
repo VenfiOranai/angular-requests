@@ -6,4 +6,6 @@ export interface RequestStore<Input, Output> {
   latestResponse?: Output;
   listener: Subject<Output>;
   activeRequest?: Subject<Output>;
+  isCacheStale: boolean;
+  isCacheInvalid: boolean;
 }
