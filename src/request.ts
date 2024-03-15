@@ -9,7 +9,7 @@ import { ensureObservation, hashObject } from './utils';
 export abstract class Request<Input, Output> extends Subject<RequestStore<Input, Output>> {
   private store: Map<string, RequestStore<Input, Output>> = new Map<string, RequestStore<Input, Output>>();
 
-  private readonly staleTimer: number = 30000;
+  protected readonly staleTimer: number = 30000;
 
   protected constructor(private http: HttpClient) {
     super();
