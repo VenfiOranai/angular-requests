@@ -1,6 +1,6 @@
 {
-  "name": "@venfi-oranai/angular-requests",
-  "version": "1.0.0",
+  "name": "angular-requests",
+  "version": "0.1.0",
   "description": "Class based helper to manage HTTP requests using RXJS in Angular",
   "main": "index.js",
   "scripts": {
