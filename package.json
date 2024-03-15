@@ -1,0 +1,27 @@
+{
+  "name": "@venfi-oranai/angular-requests",
+  "version": "1.0.0",
+  "description": "Class based helper to manage and use HTTP requests in Angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VenfiOranai/angular-requests.git"
+  },
+  "keywords": [
+    "angular",
+    "http",
+    "cache"
+  ],
+  "author": "Venfi Oranai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VenfiOranai/angular-requests/issues"
+  },
+  "homepage": "https://github.com/VenfiOranai/angular-requests#readme",
+  "dependencies": {
+    "typescript": "^5.4.2"
+  }
+}
