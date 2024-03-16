@@ -1,8 +1,8 @@
 {
   "name": "angular-requests",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Class based helper to manage HTTP requests using RXJS in Angular",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "tsup",
     "test": "echo \"Error: no test specified\" && exit 1"
