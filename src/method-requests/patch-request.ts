@@ -7,7 +7,7 @@ export abstract class PatchRequest<Input, Output> extends BaseRequest<Input, Out
     return RequestMethod.patch;
   }
 
-  public send(input: Input, forceRequest: boolean = true): RequestStore<Input, Output> {
+  public override send(input: Input, forceRequest: boolean = true): RequestStore<Input, Output> {
     return super.send(input, forceRequest);
   }
 }

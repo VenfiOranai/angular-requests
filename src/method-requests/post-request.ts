@@ -7,7 +7,7 @@ export abstract class PostRequest<Input, Output> extends BaseRequest<Input, Outp
     return RequestMethod.post;
   }
 
-  public send(input: Input, forceRequest: boolean = true): RequestStore<Input, Output> {
+  public override send(input: Input, forceRequest: boolean = true): RequestStore<Input, Output> {
     return super.send(input, forceRequest);
   }
 }

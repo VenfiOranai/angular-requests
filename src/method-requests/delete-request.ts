@@ -7,7 +7,7 @@ export abstract class DeleteRequest<Input, Output> extends BaseRequest<Input, Ou
     return RequestMethod.delete;
   }
 
-  public send(input: Input, forceRequest: boolean = true): RequestStore<Input, Output> {
+  public override send(input: Input, forceRequest: boolean = true): RequestStore<Input, Output> {
     return super.send(input, forceRequest);
   }
 }
