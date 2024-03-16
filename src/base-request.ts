@@ -10,6 +10,7 @@ export abstract class BaseRequest<Input, Output> extends Subject<RequestStore<In
   private store: Map<string, RequestStore<Input, Output>> = new Map<string, RequestStore<Input, Output>>();
 
   protected readonly staleTimer: number = 30000;
+  protected abstract readonly requestMethod: RequestMethod;
 
   protected constructor(private http: HttpClient) {
     super();
@@ -23,7 +24,6 @@ export abstract class BaseRequest<Input, Output> extends Subject<RequestStore<In
     return this.store.get(dataKey)!;
   }
 
-  protected abstract get requestMethod(): RequestMethod;
   protected abstract getUrl(_store: RequestStore<Input, Output>): string;
   protected abstract getBody(_store: RequestStore<Input, Output>): object | undefined;
 
