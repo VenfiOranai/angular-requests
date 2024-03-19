@@ -12,15 +12,8 @@
     "type": "git",
     "url": "git+https://github.com/VenfiOranai/angular-requests.git"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "type": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "build": "tsup",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "ng build"
   },
   "license": "MIT",
   "bugs": {
@@ -32,7 +25,11 @@
     "@angular/core": "^17.3.0",
     "rxjs": "^7.8.1",
     "ts-node": "^10.9.2",
-    "tsup": "^8.0.2",
-    "typescript": "^5.4.2"
-  }
+    "typescript": "^5.4.2",
+    "@angular-devkit/build-angular": "^17.3.0",
+    "@angular/cli": "^17.0.8",
+    "@angular/compiler-cli": "^17.0.0",
+    "ng-packagr": "^17.3.0"
+  },
+  "sideEffects": false
 }
