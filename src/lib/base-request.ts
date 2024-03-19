@@ -1,8 +1,8 @@
-import { RequestStore } from './request-store';
+import { RequestStore } from 'src/lib/request-store';
 import { catchError, finalize, mergeMap, Observable, Subject, tap } from 'rxjs';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
-import { RequestMethod } from './request-methods';
-import { ensureObservation, hashObject } from './utils';
+import { RequestMethod } from 'src/lib/request-methods';
+import { ensureObservation, hashObject } from 'src/lib/utils';
 
 export abstract class BaseRequest<Input, Output> extends Subject<RequestStore<Input, Output>> {
   private http: HttpClient;
