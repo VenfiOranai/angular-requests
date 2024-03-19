@@ -3,17 +3,17 @@ import { catchError, finalize, mergeMap, Observable, Subject, tap } from 'rxjs';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { RequestMethod } from './request-methods';
 import { ensureObservation, hashObject } from './utils';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export abstract class BaseRequest<Input, Output> extends Subject<RequestStore<Input, Output>> {
-  private http: HttpClient;
   private store: Map<string, RequestStore<Input, Output>> = new Map<string, RequestStore<Input, Output>>();
 
   protected readonly staleTimer: number = 30000;
   protected abstract readonly requestMethod: RequestMethod;
 
-  protected constructor(http: HttpClient) {
+  protected constructor(private http: HttpClient) {
     super();
-    this.http = http;
   }
 
   private fetchStore(dataKey: string): RequestStore<Input, Output> {
