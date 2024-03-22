@@ -2,8 +2,9 @@ import { RequestStore } from './request-store';
 import { catchError, finalize, mergeMap, Observable, Subject, tap } from 'rxjs';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { RequestMethod } from './request-methods';
-import { ensureObservation, hashObject } from './utils';
+import { ensureObservation } from './utils';
 import { Injectable } from '@angular/core';
+import { sha1 } from 'object-hash';
 
 @Injectable()
 export abstract class BaseRequest<Input, Output> extends Subject<RequestStore<Input, Output>> {
@@ -44,7 +45,7 @@ export abstract class BaseRequest<Input, Output> extends Subject<RequestStore<In
   }
 
   public send(input: Input, forceRequest: boolean = false): RequestStore<Input, Output> {
-    const dataKey: string = typeof input === 'object' ? hashObject(input as Record<string, any>) : JSON.stringify(input);
+    const dataKey: string = typeof input === 'object' ? sha1(input) : JSON.stringify(input);
 
     const store: RequestStore<Input, Output> = this.fetchStore(dataKey);
     store.latestRequest = input;
