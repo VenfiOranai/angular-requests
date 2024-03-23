@@ -33,7 +33,7 @@
     "typescript": "^5.4.2"
   },
   "sideEffects": false,
-  "dependencies": {
+  "peerDependencies": {
     "object-hash": "^3.0.0"
   }
 }
